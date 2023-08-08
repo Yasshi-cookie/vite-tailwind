@@ -37,27 +37,27 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  */
 class Comment extends Model
 {
-	use HasFactory;
-	protected $table = 'comments';
+    use HasFactory;
+    protected $table = 'comments';
 
-	protected $casts = [
-		'post_id' => 'int',
-		'author_id' => 'int'
-	];
+    protected $casts = [
+        'post_id' => 'int',
+        'author_id' => 'int'
+    ];
 
-	protected $fillable = [
-		'post_id',
-		'author_id',
-		'content'
-	];
+    protected $fillable = [
+        'post_id',
+        'author_id',
+        'content'
+    ];
 
-	public function post(): BelongsTo
-	{
-		return $this->belongsTo(Post::class);
-	}
+    public function post(): BelongsTo
+    {
+        return $this->belongsTo(Post::class);
+    }
 
-	public function author(): BelongsTo
-	{
-		return $this->belongsTo(Author::class);
-	}
+    public function author(): BelongsTo
+    {
+        return $this->belongsTo(Author::class);
+    }
 }

@@ -36,20 +36,20 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  */
 class Author extends Model
 {
-	use HasFactory;
-	protected $table = 'authors';
+    use HasFactory;
+    protected $table = 'authors';
 
-	protected $fillable = [
-		'name'
-	];
+    protected $fillable = [
+        'name'
+    ];
 
-	public function comments(): HasMany
-	{
-		return $this->hasMany(Comment::class);
-	}
+    public function comments(): HasMany
+    {
+        return $this->hasMany(Comment::class);
+    }
 
-	public function posts(): HasMany
-	{
-		return $this->hasMany(Post::class);
-	}
+    public function posts(): HasMany
+    {
+        return $this->hasMany(Post::class);
+    }
 }

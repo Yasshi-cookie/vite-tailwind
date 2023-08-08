@@ -35,26 +35,26 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  */
 class PostTag extends Model
 {
-	use HasFactory;
-	protected $table = 'post_tags';
+    use HasFactory;
+    protected $table = 'post_tags';
 
-	protected $casts = [
-		'post_id' => 'int',
-		'tag_id' => 'int'
-	];
+    protected $casts = [
+        'post_id' => 'int',
+        'tag_id' => 'int'
+    ];
 
-	protected $fillable = [
-		'post_id',
-		'tag_id'
-	];
+    protected $fillable = [
+        'post_id',
+        'tag_id'
+    ];
 
-	public function post(): BelongsTo
-	{
-		return $this->belongsTo(Post::class);
-	}
+    public function post(): BelongsTo
+    {
+        return $this->belongsTo(Post::class);
+    }
 
-	public function tag(): BelongsTo
-	{
-		return $this->belongsTo(Tag::class);
-	}
+    public function tag(): BelongsTo
+    {
+        return $this->belongsTo(Tag::class);
+    }
 }

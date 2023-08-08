@@ -43,33 +43,33 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  */
 class Post extends Model
 {
-	use HasFactory;
-	protected $table = 'posts';
+    use HasFactory;
+    protected $table = 'posts';
 
-	protected $casts = [
-		'author_id' => 'int'
-	];
+    protected $casts = [
+        'author_id' => 'int'
+    ];
 
-	protected $fillable = [
-		'author_id',
-		'title',
-		'content'
-	];
+    protected $fillable = [
+        'author_id',
+        'title',
+        'content'
+    ];
 
-	public function author(): BelongsTo
-	{
-		return $this->belongsTo(Author::class);
-	}
+    public function author(): BelongsTo
+    {
+        return $this->belongsTo(Author::class);
+    }
 
-	public function comments(): HasMany
-	{
-		return $this->hasMany(Comment::class);
-	}
+    public function comments(): HasMany
+    {
+        return $this->hasMany(Comment::class);
+    }
 
-	public function tags(): BelongsToMany
-	{
-		return $this->belongsToMany(Tag::class, 'post_tags')
-					->withPivot('id')
-					->withTimestamps();
-	}
+    public function tags(): BelongsToMany
+    {
+        return $this->belongsToMany(Tag::class, 'post_tags')
+                    ->withPivot('id')
+                    ->withTimestamps();
+    }
 }

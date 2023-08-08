@@ -34,17 +34,17 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  */
 class Tag extends Model
 {
-	use HasFactory;
-	protected $table = 'tags';
+    use HasFactory;
+    protected $table = 'tags';
 
-	protected $fillable = [
-		'name'
-	];
+    protected $fillable = [
+        'name'
+    ];
 
-	public function posts(): BelongsToMany
-	{
-		return $this->belongsToMany(Post::class, 'post_tags')
-					->withPivot('id')
-					->withTimestamps();
-	}
+    public function posts(): BelongsToMany
+    {
+        return $this->belongsToMany(Post::class, 'post_tags')
+                    ->withPivot('id')
+                    ->withTimestamps();
+    }
 }
