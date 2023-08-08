@@ -68,6 +68,7 @@ return [
         */
 
         'use' => [
+            Illuminate\Database\Eloquent\Factories\HasFactory::class,
             // Reliese\Database\Eloquent\BitBooleans::class,
             // Reliese\Database\Eloquent\BlamableBehavior::class,
         ],
@@ -416,7 +417,7 @@ return [
         |--------------------------------------------------------------------------
         | Move $fillable property to base files
         |--------------------------------------------------------------------------
-        | When base_files is true you can set fillable_in_base_files to true 
+        | When base_files is true you can set fillable_in_base_files to true
         | if you want the $fillable to be generated in base files
         |
         */
@@ -432,7 +433,7 @@ return [
         | NOTE: This requires PHP 7.0 or later.
         |
         */
-        'enable_return_types' => false,
+        'enable_return_types' => true,
     ],
 
     /*
